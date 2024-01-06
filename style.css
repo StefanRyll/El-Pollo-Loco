@@ -1,0 +1,55 @@
+html {
+    font-family: zabars, Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url(img/5_background/body-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    gap: 1em;
+    padding-top: 7em;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 64px;
+    letter-spacing: 4px;
+    margin: 0;
+    color: #A7DD3C;
+    text-shadow: 2px 0 0px #800040, 3px 2px 0px rgba(77, 0, 38, 0.5), 3px 0 3px #FF002B, 5px 0 3px #800015, 6px 2px 3px rgba(77, 0, 13, 0.5), 6px 0 9px #FF5500, 8px 0 9px #802A00, 9px 2px 9px rgba(77, 25, 0, 0.5), 11px 0 18px #806A00, 12px 2px 18px rgba(77, 66, 0, 0.5), 14px 0 30px #6A8000, 15px 2px 30px rgba(64, 77, 0, 0.5), 17px 0 45px #8c9980, 17px 2px 45px rgba(38, 77, 0, 0.5);
+}
+
+canvas {
+    cursor: url('img/cursor.png'), auto;
+    box-shadow: 2px 0 0px #800040, 3px 2px 0px rgba(77, 0, 38, 0.5), 3px 0 3px #FF002B, 5px 0 3px #800015, 6px 2px 3px rgba(77, 0, 13, 0.5), 6px 0 9px #FF5500, 8px 0 9px #802A00, 9px 2px 9px rgba(77, 25, 0, 0.5), 11px 0 18px #806A00, 12px 2px 18px rgba(77, 66, 0, 0.5), 14px 0 30px #6A8000, 15px 2px 30px rgba(64, 77, 0, 0.5), 17px 0 45px #8c9980, 17px 2px 45px rgba(38, 77, 0, 0.5);
+}
+
+canvas:hover {
+    cursor: url('img/cursor.png'), auto;
+}
+
+@media only screen and (max-width: 720px) {
+    canvas {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    body {
+        padding: 0;
+        gap: 0;
+    }
+    canvas {
+        height: 100vh;
+    }
+    h1 {
+        display: none;
+    }
+}
