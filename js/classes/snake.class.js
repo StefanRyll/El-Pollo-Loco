@@ -37,4 +37,5 @@ class Snake extends MovableObject {
     playSnakeAnimation() {
         this.playAnimation(this.IMAGES_WALKING);
     }
+
 }

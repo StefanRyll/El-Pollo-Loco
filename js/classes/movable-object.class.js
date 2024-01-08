@@ -7,6 +7,8 @@ class MovableObject extends DrawableObject {
     acceleration = 2.5;
     energy = 100;
     lastHit = 0;
+    collectedBottles = 0;
+    collectedCoins = 0;
     offset = {
         left: 0,
         right: 0,
@@ -76,12 +78,19 @@ class MovableObject extends DrawableObject {
         this.speedY = 30;
     }
 
-    isColliding(mo) {
-        return (this.x + this.width) >= mo.x && this.x <= (mo.x + mo.width) &&
-            (this.x + this.offsetY + this.height) >= mo.x &&
-            (this.x + this.offsetY) <= (mo.x + mo.height) &&
-            mo.onCollisionCourse; // Optional: hiermit könnten wir schauen, ob ein Objekt sich in die richtige Richtung bewegt. Nur dann kollidieren wir. Nützlich bei Gegenständen, auf denen man stehen kann.
+    // isColliding(mo) {
+    //     return (this.x + this.width) >= mo.x && this.x <= (mo.x + mo.width) &&
+    //         (this.x + this.offsetY + this.height) >= mo.x &&
+    //         (this.x + this.offsetY) <= (mo.x + mo.height) &&
+    //         mo.onCollisionCourse; // Optional: hiermit könnten wir schauen, ob ein Objekt sich in die richtige Richtung bewegt. Nur dann kollidieren wir. Nützlich bei Gegenständen, auf denen man stehen kann.
 
+    // }
+
+    isColliding(obj) {
+        return (this.x + this.width) - this.offset.right > obj.x + obj.offset.left &&
+            (this.y + this.height) - this.offset.bottom > obj.y + obj.offset.top &&
+            this.x + this.offset.left < obj.x + obj.width + obj.offset.right &&
+            this.y + this.offset.top < obj.y + obj.height + obj.offset.bottom;
     }
 
     // isColliding(mo) {
